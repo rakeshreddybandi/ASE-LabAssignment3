@@ -182,7 +182,7 @@
     <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.16/angular.js" data-semver="1.2.16"></script>
 </head>
 
-<body ng-app >
+<body ng-app data-ng-controller="LoginController">
 <div id="">
     <h1 ><center> Weather in the Drive Directions</center></h1>
 </div>
@@ -216,3 +216,12 @@
 
 </body>
 </html>
+
+<script>
+    function LoginController($scope) {
+
+        $scope.login = function (user, pwd) {
+            localStorage.setItem("uname" , user);
+        };
+    }
+</script>

@@ -13,7 +13,7 @@
 
 <body>
 <div>
-    <h1><center>Weather for Source and Destination</center></center></h1>
+    <h1 id="welcome"><center>Weather for Source and Destination </center></center></h1>
 </div>
 <div class="wrapp" ng-controller="googlemapoutput">
     <div class="row">
@@ -81,6 +81,8 @@
    var app=angular.module('GoogleDirection', []);
             app.controller('googlemapoutput', function ($scope) {
 
+               var username= localStorage.getItem("uname");
+                document.getElementById('welcome').innerHTML="Welcome "+username;
                 var map;
                 var mapOptions;
                 var directionsDisplay = new google.maps.DirectionsRenderer({
